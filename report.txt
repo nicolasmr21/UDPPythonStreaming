@@ -1,0 +1,3 @@
+ 
+ El cliente con ip 127.0.0.1 Visualizó el video 1.8578396 Segundos 
+ El cliente con ip 127.0.0.1 Visualizó el video 2.7334385 Segundos

@@ -48,6 +48,7 @@ def init_video():
 
 
 def client_thread(address):
+    start = time.time_ns()
     try:
         for x in video_frames:
             if address in connected_clients:
@@ -55,6 +56,12 @@ def client_thread(address):
                 time.sleep(0.016)
         s.sendto(bytes("disconnect", "utf-8"), address)
         print("Se desconecta el cliente " +address[0])
+        end = time.time_ns()
+        t = (end - start)/1000000000
+        print ("El tiempo de visualización fue {}".format(t))
+        file1 = open("report.txt","a") 
+        file1.write(" \n El cliente con ip " +address[0] +" Visualizó el video " +str(t) +" Segundos") 
+        file1.close()
     except Exception as e:
         print(e)
 
